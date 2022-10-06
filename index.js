@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({ extended: false }));
 
 //db
-const url = process.env.DB_URL;
+const url = `mongodb+srv://${process.env.DB_user}:${process.env.DB_password}@cluster0.tfzr2.mongodb.net/${process.env.DB_Name}?retryWrites=true&w=majority`;
 mongoose
   .connect(url, {
     useNewUrlParser: true,
