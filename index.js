@@ -17,6 +17,7 @@ const dynamicTextRouter = require("./router/DtextRouter");
 const adminRouter = require("./router/AdminRouter");
 const winnerDetailsRouter = require("./router/WinnerDetailsRouter");
 const headerImgRouter = require("./router/HeaderImgRouter");
+const newsRouter = require("./router/NewsRouter");
 
 require("dotenv").config();
 const port = process.env.PORT || 5000;
@@ -54,6 +55,7 @@ app.use("/api/dynamic-text", dynamicTextRouter);
 app.use("/api/admin", adminRouter);
 app.use("/api/winner-details", winnerDetailsRouter);
 app.use("/api/header-img", headerImgRouter);
+app.use("/api/news", newsRouter);
 
 app.get("/", (req, res) => {
   res.send("welcode");
