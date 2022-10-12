@@ -40,6 +40,7 @@ newsRouter.put("/", async (req, res) => {
       updateLink.des1 = req.body.upDes1 || updateLink.des1;
       updateLink.des2 = req.body.upDes2 || updateLink.des2;
       updateLink.catagory = req.body.upCatagory || updateLink.catagory;
+      updateLink.postDate = req.body.upPostDate || updateLink.postDate;
 
       await updateLink.save();
       res.send("updated");
