@@ -12,6 +12,15 @@ newsRouter.post("/", async (req, res) => {
     res.status(401).send(err.massage);
   }
 });
+newsRouter.post("/comment", async (req, res) => {
+  try {
+    const link = new News(req.body);
+    await link.save();
+    res.status(201).send("Post successfully");
+  } catch (err) {
+    res.status(401).send(err.massage);
+  }
+});
 
 newsRouter.get("/", async (req, res) => {
   try {
