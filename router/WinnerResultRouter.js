@@ -30,19 +30,19 @@ winnerResultRouter.delete("/:id", async (req, res) => {
   }
 });
 
-winnerResultRouter.put("/", async (req, res) => {
-  try {
-    const updateLink = await YoutubeLink.findById(req.body.ytId);
-    if (updateLink) {
-      updateLink.ytLink = req.body.ytLink || updateLink.ytLink;
-      await updateLink.save();
-      res.send("updated");
-    } else {
-      res.send("No item");
-    }
-  } catch (err) {
-    res.status(401).send(err.massage);
-  }
-});
+// winnerResultRouter.put("/", async (req, res) => {
+//   try {
+//     const updateLink = await YoutubeLink.findById(req.body.ytId);
+//     if (updateLink) {
+//       updateLink.ytLink = req.body.ytLink || updateLink.ytLink;
+//       await updateLink.save();
+//       res.send("updated");
+//     } else {
+//       res.send("No item");
+//     }
+//   } catch (err) {
+//     res.status(401).send(err.massage);
+//   }
+// });
 
 module.exports = winnerResultRouter;
